@@ -19,13 +19,14 @@ Note: the first couple of tutorials have lots of "errors" -- meaning things I ha
 
 ## Questions...
 
-- I'm pretty sure I heard somewhere that mojo code can be compiled into binaries for different platforms, like Rust and Go, but is that accurate?
+- I'm pretty sure I heard somewhere that mojo code can be compiled into binaries for different platforms, like Rust and Go, but is that accurate? -- Yes! It's covered pretty early in the [manual], in the [hello world] example.
 
 - If mojo imports something like matplotlib, how does that get set up?
-    - The [manual] links to a modular (the mojo company) blog post -- [Using Mojo🔥 with Python🐍] -- specifically about this.
+    - The manual links to a modular (the mojo company) blog post -- [Using Mojo🔥 with Python🐍] -- specifically about this.
     - It mentions venv -- but says that approach is finicky, and recommends a conda approach. I'm going to try the venv approach first -- something I read made me think I could simply set an envar that mojo will auto-use to load that specific python.
 
 [manual]: https://docs.modular.com/mojo/manual/python/
+[hello world]: https://docs.modular.com/mojo/manual/get-started/hello-world.html#build-an-executable-binary
 [Using Mojo🔥 with Python🐍]: https://www.modular.com/blog/using-mojo-with-python
 
 ---
@@ -47,8 +48,27 @@ Note: the first couple of tutorials have lots of "errors" -- meaning things I ha
     - [Mojo🔥 roadmap & sharp edges] -- it's at the end of the manual, so I should get to it, just noting it.
     - [An easy introduction to Mojo🔥 for Python programmers]
 
+- good gist, from [language basics]...
+
+    ```
+    Mojo functions can be declared with either fn or def.
+
+    The fn declaration enforces type-checking and memory-safe behaviors (Rust style), while def allows no type declarations and dynamic behaviors (Python style).
+
+    For example, this def function doesn’t require declaration of argument types or the return type:
+
+    def greet(name):
+        return "Hello, " + name + "!"
+
+    While the same thing as an fn function requires that you specify the argument type and the return type like this:
+
+    fn greet2(name: String) -> String:
+        return "Hello, " + name + "!"
+    ```
+
 [Mojo🔥 roadmap & sharp edges]: https://docs.modular.com/mojo/roadmap.html
 [An easy introduction to Mojo🔥 for Python programmers]: https://www.modular.com/blog/an-easy-introduction-to-mojo-for-python-programmers
+[language basics]: https://docs.modular.com/mojo/manual/basics.html
 
 ---
 ---
